@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="StatesModelStoreContainer" CdmEntityContainer="StatesEntities">
+    <EntitySetMapping Name="Counties">
+      <EntityTypeMapping TypeName="StatesModel.County">
+        <MappingFragment StoreEntitySet="County">
+          <ScalarProperty Name="countyID" ColumnName="countyID" />
+          <ScalarProperty Name="stateID" ColumnName="stateID" />
+          <ScalarProperty Name="countyName" ColumnName="countyName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="States">
+      <EntityTypeMapping TypeName="StatesModel.State">
+        <MappingFragment StoreEntitySet="State">
+          <ScalarProperty Name="stateID" ColumnName="stateID" />
+          <ScalarProperty Name="stateName" ColumnName="stateName" />
+          <ScalarProperty Name="stateAbbr" ColumnName="stateAbbr" />
+          <ScalarProperty Name="stateCapital" ColumnName="stateCapital" />
+          <ScalarProperty Name="stateTree" ColumnName="stateTree" />
+          <ScalarProperty Name="stateFlower" ColumnName="stateFlower" />
+          <ScalarProperty Name="stateBird" ColumnName="stateBird" />
+          <ScalarProperty Name="stateRegion" ColumnName="stateRegion" />
+          <ScalarProperty Name="stateImageFlag" ColumnName="stateImageFlag" />
+          <ScalarProperty Name="stateImageSeal" ColumnName="stateImageSeal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

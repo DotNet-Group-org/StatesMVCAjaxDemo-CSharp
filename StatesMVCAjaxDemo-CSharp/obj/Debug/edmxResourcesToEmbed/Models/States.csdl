@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StatesModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="StatesEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Counties" EntityType="StatesModel.County" />
+    <EntitySet Name="States" EntityType="StatesModel.State" />
+    <AssociationSet Name="FK_County_State" Association="StatesModel.FK_County_State">
+      <End Role="State" EntitySet="States" />
+      <End Role="County" EntitySet="Counties" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="County">
+    <Key>
+      <PropertyRef Name="countyID" />
+    </Key>
+    <Property Name="countyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="stateID" Type="Int32" Nullable="false" />
+    <Property Name="countyName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="State" Relationship="StatesModel.FK_County_State" FromRole="County" ToRole="State" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="stateID" />
+    </Key>
+    <Property Name="stateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="stateName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="stateAbbr" Type="String" Nullable="false" MaxLength="2" Unicode="true" FixedLength="false" />
+    <Property Name="stateCapital" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="stateTree" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="stateFlower" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="stateBird" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="stateRegion" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="stateImageFlag" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="stateImageSeal" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Counties" Relationship="StatesModel.FK_County_State" FromRole="State" ToRole="County" />
+  </EntityType>
+  <Association Name="FK_County_State">
+    <End Role="State" Type="StatesModel.State" Multiplicity="1" />
+    <End Role="County" Type="StatesModel.County" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="stateID" />
+      </Principal>
+      <Dependent Role="County">
+        <PropertyRef Name="stateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

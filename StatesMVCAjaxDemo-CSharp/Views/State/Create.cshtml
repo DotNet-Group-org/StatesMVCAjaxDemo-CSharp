@@ -1,0 +1,28 @@
+﻿@using StatesMVCAjaxDemo_CSharp;
+@model StatesMVCAjaxDemo_CSharp.Models.State
+
+@{
+    ViewBag.Title = "Create";
+
+    List<StatesMVCAjaxDemo_CSharp.Models.StateNameEntryModel> states = ViewBag.stateNames;
+}
+
+<table class="stateTable">
+    <tr class="stateTableRow">
+        <td class="stateTableCellName">
+            @Html.Partial("StateNameList", states)
+        </td>
+
+        <td class="stateTableCellData">
+
+            @Html.ValidationSummary("Please correct the errors and try again.")
+
+            @{ Html.BeginForm("Create", "State", FormMethod.Post, null); }
+
+            @Html.Partial("InputForm", Model)
+
+            @{ Html.EndForm(); }
+        </td>
+    </tr>
+</table>
+

@@ -1,0 +1,5 @@
+c:\users\rlr\documents\visual studio 2010\Projects\StatesMVCAjaxDemo-CSharp\StatesMVCAjaxDemo-CSharp\obj\Debug\ResolveAssemblyReference.cache
+c:\users\rlr\documents\visual studio 2010\Projects\StatesMVCAjaxDemo-CSharp\StatesMVCAjaxDemo-CSharp\bin\StatesMVCAjaxDemo-CSharp.dll
+c:\users\rlr\documents\visual studio 2010\Projects\StatesMVCAjaxDemo-CSharp\StatesMVCAjaxDemo-CSharp\bin\StatesMVCAjaxDemo-CSharp.pdb
+c:\users\rlr\documents\visual studio 2010\Projects\StatesMVCAjaxDemo-CSharp\StatesMVCAjaxDemo-CSharp\obj\Debug\StatesMVCAjaxDemo-CSharp.dll
+c:\users\rlr\documents\visual studio 2010\Projects\StatesMVCAjaxDemo-CSharp\StatesMVCAjaxDemo-CSharp\obj\Debug\StatesMVCAjaxDemo-CSharp.pdb

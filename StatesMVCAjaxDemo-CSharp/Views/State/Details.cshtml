@@ -1,0 +1,19 @@
+﻿@using StatesMVCAjaxDemo_CSharp
+@model StatesMVCAjaxDemo_CSharp.Models.StateDetailModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<table class="stateTable">
+    <tr class="stateTableRow">
+        <td class="stateTableCellName">
+            @Html.Partial("StateNameList", Model.stateNames )
+        </td>
+
+        <td class="stateTableCellData">
+            @Html.Partial("StateDetails", Model.stateDetails )
+        </td>
+    </tr>
+</table>
+

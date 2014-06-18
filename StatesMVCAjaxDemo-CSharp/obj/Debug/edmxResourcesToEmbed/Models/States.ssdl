@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StatesModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="StatesModelStoreContainer">
+    <EntitySet Name="County" EntityType="StatesModel.Store.County" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="State" EntityType="StatesModel.Store.State" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_County_State" Association="StatesModel.Store.FK_County_State">
+      <End Role="State" EntitySet="State" />
+      <End Role="County" EntitySet="County" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="County">
+    <Key>
+      <PropertyRef Name="countyID" />
+    </Key>
+    <Property Name="countyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="stateID" Type="int" Nullable="false" />
+    <Property Name="countyName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="stateID" />
+    </Key>
+    <Property Name="stateID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="stateName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="stateAbbr" Type="nvarchar" Nullable="false" MaxLength="2" />
+    <Property Name="stateCapital" Type="nvarchar" MaxLength="50" />
+    <Property Name="stateTree" Type="nvarchar" MaxLength="50" />
+    <Property Name="stateFlower" Type="nvarchar" MaxLength="50" />
+    <Property Name="stateBird" Type="nvarchar" MaxLength="50" />
+    <Property Name="stateRegion" Type="nvarchar" MaxLength="50" />
+    <Property Name="stateImageFlag" Type="nvarchar" MaxLength="50" />
+    <Property Name="stateImageSeal" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_County_State">
+    <End Role="State" Type="StatesModel.Store.State" Multiplicity="1" />
+    <End Role="County" Type="StatesModel.Store.County" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="stateID" />
+      </Principal>
+      <Dependent Role="County">
+        <PropertyRef Name="stateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,91 @@
+﻿@using StatesMVCAjaxDemo_CSharp
+@model StatesMVCAjaxDemo_CSharp.Models.State
+
+@{
+    ViewBag.Title = "Edit";
+
+    List<StatesMVCAjaxDemo_CSharp.Models.StateNameEntryModel> states = ViewBag.stateNames;
+}
+
+<table class="stateTable">
+    <tr class="stateTableRow">
+        <td class="stateTableCellName">
+            @Html.Partial("StateNameList", states)
+        </td>
+
+        <td class="stateTableCellData">
+
+            @Html.ValidationSummary("Please correct the errors and try again.")
+
+            @{ Html.BeginForm("Edit", "State", FormMethod.Post, null); }
+
+            <div>
+                @Html.HiddenFor(m=>m.stateID)
+
+                <table class="stateDetailTable">
+                    <tr class="stateDetailTableRow">
+                        <td class="stateDetailTableCellLabel">@Html.LabelFor(m=>m.stateName)</td>
+                        <td class="stateDetailTableCellData">@Html.TextBoxFor(m=>m.stateName)</td>
+                        <td class="stateDetailTableCellFiller">@Html.ValidationMessageFor(m=>m.stateName)</td>
+                    </tr>
+                        
+                    <tr class="stateDetailTableRow">
+                        <td class="stateDetailTableCellLabel">@Html.LabelFor(m=>m.stateAbbr)</td>
+                        <td class="stateDetailTableCellData">@Html.TextBoxFor(m=>m.stateAbbr)</td>
+                        <td class="stateDetailTableCellFiller">@Html.ValidationMessageFor(m=>m.stateAbbr)</td>
+                    </tr>
+                     
+                    <tr class="stateDetailTableRow">
+                        <td class="stateDetailTableCellLabel">@Html.LabelFor(m=>m.stateCapital)</td>
+                        <td class="stateDetailTableCellData">@Html.TextBoxFor(m=>m.stateCapital)</td>
+                        <td class="stateDetailTableCellFiller">@Html.ValidationMessageFor(m=>m.stateCapital)</td>
+                    </tr>
+
+                    <tr class="stateDetailTableRow">
+                        <td class="stateDetailTableCellLabel">@Html.LabelFor(m=>m.stateBird)</td>
+                        <td class="stateDetailTableCellData">@Html.TextBoxFor(m=>m.stateBird)</td>
+                        <td class="stateDetailTableCellFiller">@Html.ValidationMessageFor(m=>m.stateBird)</td>
+                    </tr>
+
+                    <tr class="stateDetailTableRow">
+                        <td class="stateDetailTableCellLabel">@Html.LabelFor(m=>m.stateFlower)</td>
+                        <td class="stateDetailTableCellData">@Html.TextBoxFor(m=>m.stateFlower)</td>
+                        <td class="stateDetailTableCellFiller">@Html.ValidationMessageFor(m=>m.stateFlower)</td>
+                    </tr>
+
+                    <tr class="stateDetailTableRow">
+                        <td class="stateDetailTableCellLabel">@Html.LabelFor(m=>m.stateTree)</td>
+                        <td class="stateDetailTableCellData">@Html.TextBoxFor(m=>m.stateTree)</td>
+                        <td class="stateDetailTableCellFiller">@Html.ValidationMessageFor(m=>m.stateTree)</td>
+                    </tr>
+
+                    <tr class="stateDetailTableRow">
+                        <td class="stateDetailTableCellLabel">@Html.LabelFor(m=>m.stateRegion)</td>
+                        <td class="stateDetailTableCellData">@Html.TextBoxFor(m=>m.stateRegion)</td>
+                        <td class="stateDetailTableCellFiller">@Html.ValidationMessageFor(m=>m.stateRegion)</td>
+                    </tr>
+
+                    <tr class="stateDetailTableRow">
+                        <td class="stateDetailTableCellLabel">@Html.LabelFor(m=>m.stateImageFlag)</td>
+                        <td class="stateDetailTableCellData">@Html.TextBoxFor(m=>m.stateImageFlag)</td>
+                        <td class="stateDetailTableCellFiller">@Html.ValidationMessageFor(m=>m.stateImageFlag)</td>
+                    </tr>
+
+                    <tr class="stateDetailTableRow">
+                        <td class="stateDetailTableCellLabel">@Html.LabelFor(m=>m.stateImageSeal)</td>
+                        <td class="stateDetailTableCellData">@Html.TextBoxFor(m=>m.stateImageSeal)</td>
+                        <td class="stateDetailTableCellFiller">@Html.ValidationMessageFor(m=>m.stateImageSeal)</td>
+                    </tr>
+
+                    <tr class="stateDetailTableRow">
+                        <td class="stateDetailTableCellSubmit"><input type="submit" value="Update" class="stateDetailSubmitText" /></td>
+                        <td class="stateDetailTableCellData">&nbsp;</td>
+                        <td class="stateDetailTableCellFiller">&nbsp;</td>
+                    </tr>
+                </table>
+            </div>
+
+            @{ Html.EndForm(); }
+        </td>
+    </tr>
+</table>
